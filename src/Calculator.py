@@ -20,10 +20,10 @@ def multiplication(a, b):
     return c
 
 
-def divison (a, b):
+def division (a, b):
     a = int (a)
     b = int (b)
-    c = a / b
+    c = float(a / b)
     return c
 
 class Calculator:
@@ -45,7 +45,7 @@ class Calculator:
 
 
     def division(self, a, b):
-        self.result = divison(a, b)
+        self.result = division(a, b)
         return self.result
 
 
