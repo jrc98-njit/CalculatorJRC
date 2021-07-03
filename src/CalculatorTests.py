@@ -22,11 +22,16 @@ class MyTestCase(unittest.TestCase):
 #        for row in test_Data:
 #            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']),int(row['Result']))
 
-    def test_multiply(self):
-        test_Data = CsvReader('/src/UT_Multiply.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
+#   def test_multiply(self):
+#     test_Data = CsvReader('/src/UT_Multiply.csv').data
+#     for row in test_Data:
+#          self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
 
+
+   def test_multiply(self):
+     test_Data = CsvReader('/src/UT_Divison.csv').data
+     for row in test_Data:
+          self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
 
 def test_results_property(self):
     self.assertEqual(self.calculator.result, 0)
