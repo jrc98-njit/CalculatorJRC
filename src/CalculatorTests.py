@@ -28,8 +28,14 @@ class MyTestCase(unittest.TestCase):
 #          self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
 
 
-    def test_division(self):
-        test_Data = CsvReader('/src/UT_Division.csv').data
+#    def test_division(self):
+#        test_Data = CsvReader('/src/UT_Division.csv').data
+#        for row in test_Data:
+#            self.assertEqual(self.calculator.division(row['Value 1'], row['Value 2']), float(row['Result']))
+
+
+    def test_square(self):
+    test_Data = CsvReader('/src/UT_Square.csv').data
         for row in test_Data:
             self.assertEqual(self.calculator.division(row['Value 1'], row['Value 2']), float(row['Result']))
 

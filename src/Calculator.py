@@ -26,6 +26,12 @@ def division (a, b):
     c = float(a / b)
     return c
 
+
+def square(a, b):
+    a = int(a)
+    b = (a * a)
+    return b
+
 class Calculator:
 
     def __init__(self):
@@ -43,11 +49,13 @@ class Calculator:
         self.result = multiplication(a, b)
         return self.result
 
-
     def division(self, a, b):
         self.result = division(a, b)
         return self.result
 
 
+    def square(self, a):
+        self.result = square(a)
+        return self.result
 
 
