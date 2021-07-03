@@ -17,10 +17,12 @@ class MyTestCase(unittest.TestCase):
  #       for row in test_Data:
  #           self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']),int(row['Result']))
 
+
 #    def test_subtraction(self):
 #        test_Data = CsvReader('/src/UT_Subtraction.csv').data
 #        for row in test_Data:
 #            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']),int(row['Result']))
+
 
 #   def test_multiply(self):
 #     test_Data = CsvReader('/src/UT_Multiply.csv').data
@@ -35,9 +37,9 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_square(self):
-    test_Data = CsvReader('/src/UT_Square.csv').data
+        test_Data = CsvReader('/src/UT_Square.csv').data
         for row in test_Data:
-            self.assertEqual(self.calculator.division(row['Value 1'], row['Value 2']), float(row['Result']))
+            self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
 
 def test_results_property(self):
     self.assertEqual(self.calculator.result, 0)
