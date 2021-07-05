@@ -18,9 +18,9 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']),int(row['Result']))
 
     def test_subtraction(self):
-        test_Data = CsvReader('/src/UT_Subtraction.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']),int(row['Result']))
+        test_Data1 = CsvReader('/src/UT_Subtraction.csv').data
+        for row1 in test_Data1:
+            self.assertEqual(self.calculator.subtract(row1['Value 1'], row1['Value 2']),int(row1['Result']))
 
     def test_multiply(self):
         test_Data = CsvReader('/src/UT_Multiply.csv').data
