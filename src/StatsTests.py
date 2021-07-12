@@ -1,6 +1,7 @@
 import unittest
 from Statistics import Statistics
-import CsvReader
+from CsvReader import CsvReader
+from Stats.GetSample import getSample
 
 
 class MyTestCase(unittest.TestCase):
@@ -11,35 +12,19 @@ class MyTestCase(unittest.TestCase):
     def test_instantiate_statistics(self):
         self.assertIsInstance(self.statistics, Statistics)
 
-    def test_addition(self):
-        test_Data = CsvReader('/src/UT_Addition.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']),int(row['Result']))
+    def test_getData(self):
+        self.assertEqual(len(self.getData()),20)
 
-    def test_subtraction(self):
-        test_Data1 = CsvReader('/src/UT_Subtraction.csv').data
-        for row1 in test_Data1:
-            self.assertEqual(self.calculator.subtract(row1['Value 1'], row1['Value 2']),int(row1['Result']))
+    def test_getSample(self):
+        data = getSample(self.getData(),10)
+        self.assertEqual(len(data),10)
 
-    def test_multiply(self):
-        test_Data = CsvReader('/src/UT_Multiply.csv').data
+    def getData(self):
+        test_Data = CsvReader('/src/Data/UT_SampleData.csv').data
+        data = []
         for row in test_Data:
-            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
-
-    def test_division(self):
-        test_Data = CsvReader('/src/UT_Division.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.division(row['Value 1'], row['Value 2']), float(row['Result']))
-
-    def test_square(self):
-        test_Data = CsvReader('/src/UT_Square.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
-
-    def test_square(self):
-        test_Data = CsvReader('/src/UT_SquareRoot.csv').data
-        for row in test_Data:
-            self.assertEqual(self.calculator.squareroot(row['Value 1']), float(row['Result']))
+            data.append(row['Value'])
+        return data
 
 
 def test_results_property(self):

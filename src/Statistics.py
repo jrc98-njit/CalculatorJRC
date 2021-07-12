@@ -7,6 +7,7 @@ from Stats.StandardDeviation import standardDeviation
 from Calc.Addition import addition
 from Calc.Division import division
 from Stats.GetSample import getSample
+from Stats.Mode import mode
 
 class Statistics(Calculator):
     data = []
@@ -28,6 +29,10 @@ class Statistics(Calculator):
 
     def variance(self, a):
         self.result = variance(a)
+        return self.result
+
+    def mode(self, a):
+        self.result = mode(a)
         return self.result
 
     def sample_mean(data, sample_size):
