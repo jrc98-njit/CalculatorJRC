@@ -4,6 +4,9 @@ from Calc.Division import division
 
 def mean(data):
     numValues = len(data)
+    if (numValues == 0):
+        raise Exception('empty list passed to list')
+
     total = 0
     for num in data:
         total = addition(total, num)

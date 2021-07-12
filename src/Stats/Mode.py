@@ -2,6 +2,9 @@ from collections import Counter
 from Calc.Addition import addition
 
 def mode(data):
+    numValues = len(data)
+    if (numValues == 0):
+        raise Exception('empty list passed to list')
     data.sort()
 
     list1 = []

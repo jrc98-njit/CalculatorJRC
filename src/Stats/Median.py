@@ -5,6 +5,8 @@ from Calc.Division import division
 
 def median(data):
     numValues = len(data)
+    if (numValues == 0):
+        raise Exception('empty list passed to list')
     data.sort()
 
     if (numValues % 2 == 0):
