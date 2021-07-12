@@ -1,44 +1,9 @@
-import math
-
-
-def addition(a, b):
-    a = int(a)
-    b = int(b)
-    c = a+b
-    return c
-
-
-def subtraction(a, b):
-    a = int(a)
-    b = int(b)
-    c = a - b
-    return c
-
-
-def multiplication(a, b):
-    a = int (a)
-    b = int (b)
-    c = a * b
-    return c
-
-
-def division (a, b):
-    a = int (a)
-    b = int (b)
-    c = float(a / b)
-    return c
-
-
-def square(a):
-    a = int(a)
-    b = (a * a)
-    return b
-
-
-def squareroot (a):
-    a = int(a)
-    b = math.sqrt(a)
-    return b
+from Calc.Addition import addition
+from Calc.Subtraction import subtraction
+from Calc.Multiplication import multiplication
+from Calc.Division import division
+from Calc.Square import square
+from Calc.SquareRoot import squareroot
 
 class Calculator:
 

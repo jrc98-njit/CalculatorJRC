@@ -1,15 +1,15 @@
 import unittest
-from Calculator import Calculator
+from Statistics import Statistics
 from CsvReader import CsvReader
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.calculator = Calculator()
+        self.statistics = Statistics()
 
-    def test_instantiate_calculator(self):
-        self.assertIsInstance(self.calculator, Calculator)
+    def test_instantiate_statistics(self):
+        self.assertIsInstance(self.statistics, Statistics)
 
     def test_addition(self):
         test_Data = CsvReader('/src/UT_Addition.csv').data
