@@ -29,6 +29,22 @@ class MyTestCase(unittest.TestCase):
         print(self.statistics.mean(data))
         self.assertEqual(self.statistics.mean(data), statistics.mean(data))
 
+    def test_medianOdd(self):
+        data = getSample(self.getData(),9)
+        print(self.statistics.median(data))
+        self.assertEqual(self.statistics.median(data), statistics.median(data))
+
+    def test_medianEven(self):
+        data = getSample(self.getData(),10)
+        print(self.statistics.median(data))
+        self.assertEqual(self.statistics.median(data), statistics.median(data))
+
+#    def test_mode(self):
+#        data = getSample(self.getData(),10)
+#        print(self.statistics.mode(data))
+#        self.assertEqual(self.statistics.mode(data), statistics.mode(data))
+
+
     def getData(self):
         test_Data = CsvReader('/src/Data/UT_SampleData.csv').data
         data = []

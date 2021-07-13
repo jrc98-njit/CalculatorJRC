@@ -10,9 +10,10 @@ def median(data):
     data.sort()
 
     if (numValues % 2 == 0):
-        median1 = data[numValues//2]
-        median2 = data[numValues//2 - 1]
-        median = mean(data)
+        median_data = []
+        median_data.append(data[numValues//2])
+        median_data.append(data[numValues//2 - 1])
+        median = mean(median_data)
     else:
         median = data[numValues//2]
     return median
