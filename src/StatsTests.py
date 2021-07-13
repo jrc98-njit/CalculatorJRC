@@ -55,7 +55,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual((int)(self.statistics.standard_deviation(data)),(int)(statistics.stdev(data)))
 
     def getData(self):
-        test_Data = CsvReader('/src/Data/UT_SampleData.csv').data
+        test_Data = CsvReader('./src/Data/UT_SampleData.csv').data
         data = []
         for row in test_Data:
             num = data.append((int)(row['Value']))
