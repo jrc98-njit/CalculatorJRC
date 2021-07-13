@@ -12,9 +12,10 @@ def mode(data):
     i = 0
     while i < len(data) :
         list1.append(data.count(data[i]))
-        addition(i,1)
+        i = addition(i,1)
 
     d1 = dict(zip(data, list1))
-    d2={k for (k,v) in d1.items() if v == max(list1)}
-
-    return d2
+    d2=[k for (k,v) in d1.items() if v == max(list1)]
+    d2.sort()
+#   return the first item in the array
+    return d2[0]

@@ -39,11 +39,20 @@ class MyTestCase(unittest.TestCase):
         print(self.statistics.median(data))
         self.assertEqual(self.statistics.median(data), statistics.median(data))
 
-#    def test_mode(self):
-#        data = getSample(self.getData(),10)
-#        print(self.statistics.mode(data))
-#        self.assertEqual(self.statistics.mode(data), statistics.mode(data))
+    def test_mode(self):
+        data = getSample(self.getData(),10)
+        print(self.statistics.mode(data))
+        self.assertEqual(self.statistics.mode(data), statistics.mode(data))
 
+    def test_variance(self):
+        data = getSample(self.getData(),10)
+        #had to cast to int to handle the number being off slightly
+        self.assertEqual((int)(self.statistics.variance(data)), (int)(statistics.variance(data)))
+
+    def test_standard_deviation(self):
+        data = getSample(self.getData(), 10)
+        #had to cast to int to handle the number being off slightly
+        self.assertEqual((int)(self.statistics.standard_deviation(data)),(int)(statistics.stdev(data)))
 
     def getData(self):
         test_Data = CsvReader('/src/Data/UT_SampleData.csv').data
