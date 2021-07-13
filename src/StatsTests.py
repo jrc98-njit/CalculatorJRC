@@ -1,4 +1,5 @@
 import unittest
+import statistics
 from Statistics import Statistics
 from CsvReader import CsvReader
 from Stats.GetSample import getSample
@@ -19,11 +20,20 @@ class MyTestCase(unittest.TestCase):
         data = getSample(self.getData(),10)
         self.assertEqual(len(data),10)
 
+    def testMeanStringFails(self):
+        data = ['string1','string2','string3']
+        self.assertRaises(Exception,self.statistics.mean,data)
+
+    def test_mean(self):
+        data = getSample(self.getData(),10)
+        print(self.statistics.mean(data))
+        self.assertEqual(self.statistics.mean(data), statistics.mean(data))
+
     def getData(self):
         test_Data = CsvReader('/src/Data/UT_SampleData.csv').data
         data = []
         for row in test_Data:
-            data.append(row['Value'])
+            num = data.append((int)(row['Value']))
         return data
 
 

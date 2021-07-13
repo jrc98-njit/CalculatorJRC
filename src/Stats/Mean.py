@@ -9,5 +9,7 @@ def mean(data):
 
     total = 0
     for num in data:
+        if (isinstance(num,str)):
+            raise Exception('List must contain numbers')
         total = addition(total, num)
     return division(total, numValues)
